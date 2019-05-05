@@ -1,3 +1,5 @@
+//结论：函数的声明隐含了extern。
+
 #include <iostream>
 //#include "user_print.h"
 

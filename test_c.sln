@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28809.33
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_c", "test_c\test_c.vcxproj", "{6A688893-3792-4BFF-87B5-0D51D7FA8A44}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "不使用extern调用外部文件变量", "test_c\test_c.vcxproj", "{6A688893-3792-4BFF-87B5-0D51D7FA8A44}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "测试宏定义的返回值", "测试宏定义的返回值\测试宏定义的返回值.vcxproj", "{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{6A688893-3792-4BFF-87B5-0D51D7FA8A44}.Release|x64.Build.0 = Release|x64
 		{6A688893-3792-4BFF-87B5-0D51D7FA8A44}.Release|x86.ActiveCfg = Release|Win32
 		{6A688893-3792-4BFF-87B5-0D51D7FA8A44}.Release|x86.Build.0 = Release|Win32
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Debug|x64.ActiveCfg = Debug|x64
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Debug|x64.Build.0 = Debug|x64
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Debug|x86.ActiveCfg = Debug|Win32
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Debug|x86.Build.0 = Debug|Win32
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x64.ActiveCfg = Release|x64
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x64.Build.0 = Release|x64
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x86.ActiveCfg = Release|Win32
+		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

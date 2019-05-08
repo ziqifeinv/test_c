@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "不使用extern调用外部
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "测试宏定义的返回值", "测试宏定义的返回值\测试宏定义的返回值.vcxproj", "{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "static函数的外部调用", "static函数的外部调用\static函数的外部调用.vcxproj", "{5D01F9C7-2271-4A6B-B804-A0F532744E42}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "全局结构体在外部文件调用", "全局结构体在外部文件调用\全局结构体在外部文件调用.vcxproj", "{E8BF257F-03B6-4781-B866-A141A30BA575}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指针在外部函数的调用", "指针在外部函数的调用\指针在外部函数的调用.vcxproj", "{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +37,30 @@ Global
 		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x64.Build.0 = Release|x64
 		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x86.ActiveCfg = Release|Win32
 		{D7C9E7E3-A072-4F41-B9A9-9C00A6EC3579}.Release|x86.Build.0 = Release|Win32
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Debug|x64.ActiveCfg = Debug|x64
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Debug|x64.Build.0 = Debug|x64
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Debug|x86.ActiveCfg = Debug|Win32
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Debug|x86.Build.0 = Debug|Win32
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Release|x64.ActiveCfg = Release|x64
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Release|x64.Build.0 = Release|x64
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Release|x86.ActiveCfg = Release|Win32
+		{5D01F9C7-2271-4A6B-B804-A0F532744E42}.Release|x86.Build.0 = Release|Win32
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Debug|x64.ActiveCfg = Debug|x64
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Debug|x64.Build.0 = Debug|x64
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Debug|x86.ActiveCfg = Debug|Win32
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Debug|x86.Build.0 = Debug|Win32
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Release|x64.ActiveCfg = Release|x64
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Release|x64.Build.0 = Release|x64
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Release|x86.ActiveCfg = Release|Win32
+		{E8BF257F-03B6-4781-B866-A141A30BA575}.Release|x86.Build.0 = Release|Win32
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Debug|x64.ActiveCfg = Debug|x64
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Debug|x64.Build.0 = Debug|x64
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Debug|x86.Build.0 = Debug|Win32
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x64.ActiveCfg = Release|x64
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x64.Build.0 = Release|x64
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x86.ActiveCfg = Release|Win32
+		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

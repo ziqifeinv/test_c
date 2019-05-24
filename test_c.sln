@@ -13,11 +13,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "全局结构体在外部文
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指针在外部函数的调用", "指针在外部函数的调用\指针在外部函数的调用.vcxproj", "{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hex移位", "Project1\Project1.vcxproj", "{24C99A93-8B27-49C8-A20F-696024EFA758}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "switch case", "switch case\switch case.vcxproj", "{63EDC787-FB25-4887-BE58-DA3AF1EFB4B0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hex移位", "移位测试\移位测试.vcxproj", "{A8F43920-9BE1-452F-ACFB-B623E7E658BC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10 测试文件相关函数", "10 测试文件相关函数\10 测试文件相关函数.vcxproj", "{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "测试不同枚举变量中相同变量名", "测试不同枚举变量中相同变量名\测试不同枚举变量中相同变量名.vcxproj", "{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,14 +69,6 @@ Global
 		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x64.Build.0 = Release|x64
 		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x86.ActiveCfg = Release|Win32
 		{D2A77B2C-DE1A-4780-8B11-F5FF1550A889}.Release|x86.Build.0 = Release|Win32
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Debug|x64.ActiveCfg = Debug|x64
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Debug|x64.Build.0 = Debug|x64
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Debug|x86.ActiveCfg = Debug|Win32
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Debug|x86.Build.0 = Debug|Win32
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Release|x64.ActiveCfg = Release|x64
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Release|x64.Build.0 = Release|x64
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Release|x86.ActiveCfg = Release|Win32
-		{24C99A93-8B27-49C8-A20F-696024EFA758}.Release|x86.Build.0 = Release|Win32
 		{63EDC787-FB25-4887-BE58-DA3AF1EFB4B0}.Debug|x64.ActiveCfg = Debug|x64
 		{63EDC787-FB25-4887-BE58-DA3AF1EFB4B0}.Debug|x64.Build.0 = Debug|x64
 		{63EDC787-FB25-4887-BE58-DA3AF1EFB4B0}.Debug|x86.ActiveCfg = Debug|Win32
@@ -91,6 +85,22 @@ Global
 		{A8F43920-9BE1-452F-ACFB-B623E7E658BC}.Release|x64.Build.0 = Release|x64
 		{A8F43920-9BE1-452F-ACFB-B623E7E658BC}.Release|x86.ActiveCfg = Release|Win32
 		{A8F43920-9BE1-452F-ACFB-B623E7E658BC}.Release|x86.Build.0 = Release|Win32
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Debug|x64.ActiveCfg = Debug|x64
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Debug|x64.Build.0 = Debug|x64
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Debug|x86.ActiveCfg = Debug|Win32
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Debug|x86.Build.0 = Debug|Win32
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Release|x64.ActiveCfg = Release|x64
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Release|x64.Build.0 = Release|x64
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Release|x86.ActiveCfg = Release|Win32
+		{672DCABB-F83B-4F65-BB85-DE51E6A54CFF}.Release|x86.Build.0 = Release|Win32
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Debug|x64.ActiveCfg = Debug|x64
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Debug|x64.Build.0 = Debug|x64
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Debug|x86.Build.0 = Debug|Win32
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Release|x64.ActiveCfg = Release|x64
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Release|x64.Build.0 = Release|x64
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Release|x86.ActiveCfg = Release|Win32
+		{2B35FA5A-B0FA-462A-AF60-A7885CFA5D30}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

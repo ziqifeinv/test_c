@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "stdio.h"
+#include "stdlib.h"
+#include <string.h>
 
 #define isspace(c) (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
 
@@ -16,6 +18,7 @@ typedef enum _dev_type {
 	RX_E = 8,
 	GLNA = 9,
 	ZC = 10,
+	ADC = 11,
 
 	DEV_TYPE_MAX = 0xff,
 }dev_type;
@@ -45,6 +48,14 @@ typedef enum _uart_type {
 
 	UART_MAX = 0xff,
 }uart_type;
+
+typedef enum _adc_type {
+	TYPE_ADC_PM_12V = 0,
+	TYPE_ADC_PM_3V = 1,
+	TYPE_ADC_PM_GND = 2,
+
+	TYPE_ADC_MAX = 0xff,
+}adc_type;
 
 static int is_whitespace(const char* text)
 {
@@ -80,6 +91,9 @@ int main()
 	dev_type dev = DEV_TYPE_MAX;
 	dev_io io = DEV_IO_MAX;
 	uart_type uart = UART_MAX;
+	adc_type adc = TYPE_ADC_MAX;
+
+
 	if (fp == NULL)
 		printf("file open failed!");
 	while (fgets(buf, sizeof(buf), fp) != NULL)
@@ -114,6 +128,25 @@ int main()
 				//printf("rs485 gpio:%d\n", atoi (peek_next_token (start)));
 				io = RS485;
 			}
+			if (dev == ADC) {
+				if (starts_with(start, "pm_12v ")) {
+					adc = TYPE_ADC_PM_12V;
+				}
+				if (starts_with(start, "pm_3v ")) {
+					adc = TYPE_ADC_PM_3V;
+				}
+				if (starts_with(start, "pm_gnd ")) {
+					adc = TYPE_ADC_PM_GND;
+				}
+			
+				start = (char*)strchr(buf, 'h');
+				//int len = strlen(test);
+				start++;
+				
+				int ch = 0;
+				ch = atoi(start);
+				printf("adc %d  ch is %d\n",adc, ch);
+			}
 			else
 				printf("Î´Ê¶±ð×Ö¶Î!\n");
 
@@ -140,6 +173,9 @@ int main()
 			}
 			else if (starts_with(start, "uart3")) {
 				dev = UART3;
+			}
+			else if (starts_with(start, "adc")) {
+				dev = ADC;
 			}
 		}
 	}

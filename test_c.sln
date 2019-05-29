@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "strchr函数测试", "strch
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11 switch语句嵌套", "11 switch语句嵌套\11 switch语句嵌套.vcxproj", "{2A2A30A0-A93D-4DD0-8EB1-0C2BC934FA8B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12 测试函数内部的define能否在外部调用", "12 测试函数内部的define能否在外部调用\12 测试函数内部的define能否在外部调用.vcxproj", "{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{2A2A30A0-A93D-4DD0-8EB1-0C2BC934FA8B}.Release|x64.Build.0 = Release|x64
 		{2A2A30A0-A93D-4DD0-8EB1-0C2BC934FA8B}.Release|x86.ActiveCfg = Release|Win32
 		{2A2A30A0-A93D-4DD0-8EB1-0C2BC934FA8B}.Release|x86.Build.0 = Release|Win32
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Debug|x64.ActiveCfg = Debug|x64
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Debug|x64.Build.0 = Debug|x64
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Debug|x86.ActiveCfg = Debug|Win32
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Debug|x86.Build.0 = Debug|Win32
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Release|x64.ActiveCfg = Release|x64
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Release|x64.Build.0 = Release|x64
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Release|x86.ActiveCfg = Release|Win32
+		{DDAE508F-0A11-43E1-8EF5-BF319DEE7247}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

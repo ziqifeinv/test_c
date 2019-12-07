@@ -1,26 +1,53 @@
 
-//
+//内存相关函数均以byte为单位操作
 
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
-int test1[3] = { 1,2,3,};
+#define data_len	5
 
-void test_func()
-{
-	int test2[3] = { 4,5,6 };
-}
+uint32_t test1[data_len] = { 0xaaaaaaaa ,0xbbbbbbbb ,0xcccccccc, 0xdddddddd, 0xeeeeeeee };
 
 int main()
 {
-	int test3[3] = { 0 };
-	memcpy(test3, test1, sizeof(test1));
+	uint32_t test2[data_len] = { 0 };
+	uint8_t test3[data_len * 4] = { 0 };
+	memcpy(test3, test1, data_len * 4);
+
+	printf("test3 len:%d \n", sizeof(test3));
 	printf("test3 is :");
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < data_len * 4; i++)
 	{
-		printf("%d,", test3[i]);
+		printf("%X,", test3[i]);
 	}
+	printf("\n");
+
+	printf("test2 len:%d \n", sizeof(test2));
+	memcpy(test2, test3, data_len*4);
+	printf("test2 is :");
+	for (int i = 0; i < data_len; i++)
+	{
+		printf("%X,", test2[i]);
+	}
+	printf("\n");
 	
+	memset(test2, 0, data_len * 4);
+	printf("test2 set 0is :");
+	for (int i = 0; i < data_len; i++)
+	{
+		printf("%X,", test2[i]);
+	}
+	printf("\n");
+
+	memcpy(test2, test1, data_len * 4);
+	printf("test2 is :");
+	for (int i = 0; i < data_len; i++)
+	{
+		printf("%X,", test2[i]);
+	}
+	printf("\n");
+
 	getchar();
 	return 0;
 }

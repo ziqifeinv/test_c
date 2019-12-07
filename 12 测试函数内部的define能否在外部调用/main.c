@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include "user_print.h"
 
+#define test define_test
+
 int user_print_3()
 {
 #define tanxiong 33
@@ -20,8 +22,9 @@ int user_print_4()
 
 int main()
 {
-	user_print();
+	user_print_1();
 	printf("main func:%d\n", tanxiong);
+	printf("main test:%d\n", test);
 	getchar();
 	return 0;
 }

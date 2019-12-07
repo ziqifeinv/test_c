@@ -1,0 +1,5 @@
+
+struct test
+{
+	int x;
+};

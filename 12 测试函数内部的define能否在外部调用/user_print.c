@@ -1,5 +1,7 @@
 #include "user_print.h"
 
+#define define_test	8
+
 int user_print_1()
 {
 #define tanxiong 11

@@ -21,6 +21,7 @@ int main()
     model = MODEL_SLEEP;
     act = ACTION_REC;
     printf("2: model:%d, act:%d \n",model,act);
+    
     getchar();
     return 0;
 }

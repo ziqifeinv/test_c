@@ -266,9 +266,17 @@ void func_16()
 	printf("2 ptr_addr:%p, ptr:%p, value:%d \n", &ptr, ptr, *ptr);
 }
 
+void func_17()
+{
+	uint8_t a = 11;
+	uint8_t b = 22;
+	uint8_t *table[1] = {&a,};
+	printf("a:%d, table a:%d \n",a, *table[0]);
+}
+
 int main()
 {
-	func_16();
+	func_17();
 	getchar();
 	return 0;
 }

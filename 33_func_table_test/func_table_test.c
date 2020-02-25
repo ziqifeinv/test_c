@@ -10,7 +10,7 @@ int func_write(char *buf, int length);
 int func_read(char *buf, int length);
 
 iot_cus_ports_api_t g_func_table = {
-    // pib = 12,
+    .pid = 22,
     .p_init = func_init,
     .p_ready = func_ready,
     .p_timer = func_timer_handle,
@@ -21,8 +21,9 @@ iot_cus_ports_api_t g_func_table = {
 int func_init(int pib)
 {
     printf("enter %s \n", __FUNCTION__);
-    printf("%s, pib:%d \n", __FUNCTION__, pib);
+    printf("%s, pib1:%d \n", __FUNCTION__, g_func_table.pid);
     g_func_table.pid = pib;
+    printf("%s, pib2:%d \n", __FUNCTION__, g_func_table.pid);
     return pib;
 }
 

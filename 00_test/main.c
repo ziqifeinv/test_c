@@ -12,8 +12,8 @@ void func_1()
 	test = test ^ 3 ^ 4 ^ 5;
 	printf("test is %d", test);
 #if 0
-	printf("十进制： %d\n", 256);
-	printf("16进制： %x\n", 256);
+	printf("閸椾浇绻橀崚璁圭窗 %d\n", 256);
+	printf("16鏉╂稑鍩楅敍? %x\n", 256);
 #endif
 	getchar();
 	return;
@@ -69,8 +69,8 @@ void func_3(uint32_t interrupt)
 
 void func_4()
 {
-	printf("十进制:%d \n", 0b11);
-	printf("十六进制:%x \n", 0b11);
+	printf("閸椾浇绻橀崚?:%d \n", 0b11);
+	printf("閸椾礁鍙氭潻娑樺煑:%x \n", 0b11);
 }
 
 int *func_5_1()
@@ -336,6 +336,7 @@ void func_19()
 	printf("x:%d \n",x);
 }
 
+//濞村??鐦?楠炶櫕绮﹂崝鐔诲厴閿涘苯婀?婢х偤鍣烘潏鍐ㄧ毈閺冩湹濞囬悽鈺?loat閸滃?╪t閻ㄥ嫬灏?閸??
 float func_20_1(uint8_t actual_pos, float last_pos)
 {
 	float actual_pos_f = (float)actual_pos;
@@ -351,7 +352,7 @@ float func_20_1(uint8_t actual_pos, float last_pos)
 		last_pos, last_pos_f, actual_pos, actual_pos_f, temp, (uint8_t)temp, temp_dec, result, (uint8_t)result);
 	return result;
 }
-void func_20()	//float 取整
+void func_20()	//float 閸欐牗鏆?
 {
 	// for(uint8_t i = 2; i < 20; i += 2) {
 	// 	(void)func_20_1(i, i - 1);
@@ -419,9 +420,38 @@ void func_22()
 	printf("\n");
 	return;
 }
+
+//获取时间和日历并创建以日历为名称的log文件
+#include <time.h>
+void func_23()
+{
+	time_t raw_time = 0;
+	struct tm *info = NULL;
+	char buffer[80] = {0};
+
+	time(&raw_time);
+
+	info = localtime(&raw_time);
+	printf("当前时间是 %s", asctime(info));
+	printf("%d-%d-%d %d-%d-%d \n",(info->tm_year + 1900), (info->tm_mon + 1),
+		 info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
+
+	sprintf(buffer, "%d-%02d-%02d %02d-%02d-%02d.log",(info->tm_year + 1900), (info->tm_mon + 1),
+		 info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
+	printf("file name:%s \n",buffer);
+	FILE *file_temp =  fopen(buffer, "w");
+	if (file_temp == NULL) {
+		printf("create file failed \n");
+	} else {
+		fclose(file_temp);
+	}
+
+	return;
+}
+
 int main()
 {
-	func_22();
+	func_23();
 	getchar();
 	return 0;
 }

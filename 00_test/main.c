@@ -305,20 +305,20 @@ void func_18()
 
 	char aa[7] = "hello";
 	char bb[7] = "world";
-	char* aa_1 = &aa;
+	char *aa_1 = &aa;
 
 	test_t cc = {0b0000001};
 	test_t dd = {0b0000010};
-	printf("cc.a:%d \n",cc.a);
+	printf("cc.a:%d \n", cc.a);
 	cc = dd;
-	printf("cc.a:%d \n",cc.a);
+	printf("cc.a:%d \n", cc.a);
 
-	printf("aa:%s, bb:%s \n",aa,bb);
+	printf("aa:%s, bb:%s \n", aa, bb);
 	*aa_1 = bb;
-	printf("aa:%s, bb:%s \n",aa,bb);
+	printf("aa:%s, bb:%s \n", aa, bb);
 
 	test_t xxx = {0};
-	uint8_t* temp_p = &xxx;
+	uint8_t *temp_p = &xxx;
 	printf("xxx addr:%p \n", temp_p);
 
 	printf("a:%d, b:%d, c:%d, d:%d \n", xxx.a, xxx.b, xxx.c, xxx.d);
@@ -329,11 +329,11 @@ void func_18()
 void func_19()
 {
 #define RX_TIMEOUT_TRANSFORM(x) ((25 * (x) > 127) ? 127 \
-    : ((25 * (x) < 94) ? 94 : (25 * (x))))
+												  : ((25 * (x) < 94) ? 94 : (25 * (x))))
 
 	uint8_t x = 6;
 	x = RX_TIMEOUT_TRANSFORM(x);
-	printf("x:%d \n",x);
+	printf("x:%d \n", x);
 }
 
 //濞村??鐦?楠炶櫕绮﹂崝鐔诲厴閿涘苯婀?婢х偤鍣烘潏鍐ㄧ毈閺冩湹濞囬悽鈺?loat閸滃?╪t閻ㄥ嫬灏?閸??
@@ -349,10 +349,10 @@ float func_20_1(uint8_t actual_pos, float last_pos)
 	// result = (uint8_t)temp + (temp_dec >= 0.5 ? 1: 0);
 	result = temp;
 	printf("last pos:%f -f:%f, actual pos:%d -f:%f, temp:%f -uint8:%d, temp_dev:%f, result:%f -uint8:%d \n",
-		last_pos, last_pos_f, actual_pos, actual_pos_f, temp, (uint8_t)temp, temp_dec, result, (uint8_t)result);
+		   last_pos, last_pos_f, actual_pos, actual_pos_f, temp, (uint8_t)temp, temp_dec, result, (uint8_t)result);
 	return result;
 }
-void func_20()	//float 閸欐牗鏆?
+void func_20() //float 閸欐牗鏆?
 {
 	// for(uint8_t i = 2; i < 20; i += 2) {
 	// 	(void)func_20_1(i, i - 1);
@@ -365,17 +365,18 @@ void func_20()	//float 閸欐牗鏆?
 	result = func_20_1(13, result);
 }
 
-void func_21_1(uint8_t* buf, uint32_t len)
+void func_21_1(uint8_t *buf, uint32_t len)
 {
 	printf("the array is: ");
-	for(uint32_t i = 0; i < len; i++) {
+	for (uint32_t i = 0; i < len; i++)
+	{
 		printf("%d ", buf[i]);
 	}
 	printf("\n");
 }
 void func_21()
 {
-	uint8_t arr[2][2] = {{1,2},{3,4}};
+	uint8_t arr[2][2] = {{1, 2}, {3, 4}};
 	func_21_1(arr[0], 2);
 }
 
@@ -402,11 +403,11 @@ unsigned long *preuso_noise_sequence(        ){
 }
 #else
 const unsigned long preamble_list[7] = {0x7AEA2433, 0x4E5586F4, 0xE9B9142B,
-    0x1732094E, 0xFBA0D6DD, 0x7787FC1E, 0xF6CD0EF0};
+										0x1732094E, 0xFBA0D6DD, 0x7787FC1E, 0xF6CD0EF0};
 
-const unsigned long *preuso_noise_sequence(      )
+const unsigned long *preuso_noise_sequence()
 {
-    return &preamble_list[0];
+	return &preamble_list[0];
 }
 #endif
 void func_22()
@@ -414,7 +415,8 @@ void func_22()
 	unsigned long *result = NULL;
 	result = preuso_noise_sequence();
 	printf("result :");
-	for (uint8_t i = 0; i < 7; i++) {
+	for (uint8_t i = 0; i < 7; i++)
+	{
 		printf("0x%08X, ", result[i]);
 	}
 	printf("\n");
@@ -433,25 +435,406 @@ void func_23()
 
 	info = localtime(&raw_time);
 	printf("当前时间是 %s", asctime(info));
-	printf("%d-%d-%d %d-%d-%d \n",(info->tm_year + 1900), (info->tm_mon + 1),
-		 info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
+	printf("%d-%d-%d %d-%d-%d \n", (info->tm_year + 1900), (info->tm_mon + 1),
+		   info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
 
-	sprintf(buffer, "%d-%02d-%02d %02d-%02d-%02d.log",(info->tm_year + 1900), (info->tm_mon + 1),
-		 info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
-	printf("file name:%s \n",buffer);
-	FILE *file_temp =  fopen(buffer, "w");
-	if (file_temp == NULL) {
+	sprintf(buffer, "%d-%02d-%02d %02d-%02d-%02d.log", (info->tm_year + 1900), (info->tm_mon + 1),
+			info->tm_mday, info->tm_hour, info->tm_min, info->tm_sec);
+	printf("file name:%s \n", buffer);
+	FILE *file_temp = fopen(buffer, "w");
+	if (file_temp == NULL)
+	{
 		printf("create file failed \n");
-	} else {
+	}
+	else
+	{
 		fclose(file_temp);
 	}
 
 	return;
 }
 
+//atoi sscanf 函数测试
+void func_24()
+{
+	int version = 0;
+	char keyword[] = "data_version:";
+	char test[] = "data_version:-234";
+	uint8_t data[7] = {0};
+	char test_2[] = "data:0x1234 0x22 0x33 0xdd 0xee 0xff";
+	char keyword_2[] = "data:";
+
+	version = atoi(&test[strlen(keyword)]);
+	printf("字符串值 = %s, 整型值 = %d\n", test, version);
+
+	sscanf(&test_2[strlen(keyword_2)], "%X %X %X %X %X %X %X",
+		 &data[0], &data[1], &data[2], &data[3], &data[4], &data[5], &data[6]);
+
+	printf("data: %X, %X, %X, %X, %X, %X, %X",
+		 data[0], data[1], data[2],data[3], data[4], data[5],data[6]);
+	return;
+}
+
+//测试memcmp函数
+void func_25()
+{
+	uint8_t data[7] = {0xAA, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0xaa};
+	uint8_t decode_data[7] = {0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0xaa};
+	uint8_t result = 0;
+	result = memcmp(data, decode_data, 7);
+	printf("result:%d \n", result);
+	if (memcmp(data, decode_data, 7) == 0) {
+		printf("ok");
+	} else {
+		printf("not ok");
+	}
+}
+
+//测试指针
+//指针可以直接赋值
+//结构体中的结构体指针只计算指针大小，而不是计算结构体大小
+//所以初始化结构体时，其指针必须手动申请内存
+#pragma pack(push)
+#pragma pack(1)
+typedef struct _a_t
+{
+	uint8_t a1;
+	uint8_t a2;
+	uint32_t a3;
+} a_t;
+
+typedef struct _test_t
+{
+	a_t *a;
+	uint8_t b;
+	uint32_t c;
+} test_t;
+
+void func_26()
+{
+	uint8_t *ptr_1 = NULL;
+	uint32_t *ptr_2 = NULL;
+	uint8_t dummy = 0xff;
+	printf("1 ptr_1:%p, ptr_2:%p \n", ptr_1, ptr_2);
+	ptr_1 = malloc(10);
+	// memcpy(ptr_1, &dummy, 10);
+	memset(ptr_1, 0xff, 10);
+	ptr_2 = (uint32_t *)ptr_1;
+	printf("2 ptr_1:%p, ptr_2:%p \n", ptr_1, ptr_2);
+	free(ptr_1);
+
+	uint32_t size_a_t = sizeof(a_t);
+	uint32_t size_test_t = sizeof(test_t);
+	printf("a_t size:%d, test_t size:%d \n", size_a_t, size_test_t);
+}
+#pragma pack(pop)
+
+//测试传递函数指针
+//传递函数名即可
+typedef void (*test_func_t)(uint8_t a, uint8_t b);
+void func_27_1(uint8_t a, uint8_t b)
+{
+	printf("enter %s\n", __FUNCTION__);
+	printf("%s, a:%d, b:%d \n", __FUNCTION__, a, b);
+	return;
+}
+
+void func_27_2(test_func_t func, uint8_t **ptr)
+{
+	printf("enter %s\n", __FUNCTION__);
+	uint8_t *temp_ptr = NULL;
+	uint8_t a = 1, b = 2;
+	func(a, b);
+	temp_ptr = malloc(4);
+	printf("222 temp ptr:%p\n", temp_ptr);
+	*ptr = temp_ptr;
+	return;
+}
+
+void func_27()
+{
+	uint8_t *ptr_temp = NULL;
+	printf("enter %s\n", __FUNCTION__);
+	printf("111 ptr:%p\n",ptr_temp);
+	func_27_2(func_27_1, &ptr_temp);
+	printf("333 ptr:%p\n",ptr_temp);
+	return;
+}
+
+//类似与 i++ i--等代码，都需要等待所在逻辑执行完成之后才会自增自减
+void func_28()
+{
+	uint8_t buffer[10] = {0};
+	uint8_t i = 0;
+	buffer[i++] = 1;
+
+	printf("i:%d, buffer: ", i);
+	for (uint8_t j = 0; j < 10; j++) {
+		printf("%d, ", buffer[j]);
+	}
+	printf("\n");
+}
+
+//测试宏转为结构体
+/* define partition properties, see mtd_authority_t */
+#define AUTH_RW_NONE        0
+#define AUTH_READ_ONLY      1
+#define AUTH_WRITE_ONLY     2
+#define AUTH_RW_ALL         3
+#define FLASH_LAYOUT_2M \
+    { \
+        0x0002, \
+        0x00200000, \
+        { \
+            {0x00000000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00008000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00010000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00011000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00012000, 0x00006000, AUTH_RW_ALL}, \
+            {0x00018000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00019000, 0x00006000, AUTH_RW_ALL}, \
+            {0x0001F000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00020000, 0x000E0000, AUTH_RW_ALL}, \
+            {0x00100000, 0x00070000, AUTH_RW_ALL}, \
+            {0x00170000, 0x00070000, AUTH_RW_ALL}, \
+            {0x001E0000, 0x0001E000, AUTH_RW_ALL}, \
+            {0x001F0000, 0x00000000, AUTH_RW_NONE}, \
+            {0x001F7000, 0x00000000, AUTH_RW_NONE}, \
+            {0x001FE000, 0x00001000, AUTH_RW_NONE}, \
+            {0x001FF000, 0x00001000, AUTH_RW_ALL}, \
+        }, \
+    }
+#define FLASH_LAYOUT_4M \
+    { \
+        0x0004, \
+        0x00400000, \
+        { \
+            {0x00000000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00008000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00010000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00011000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00012000, 0x00007000, AUTH_RW_ALL}, \
+            {0x00000000, 0x00000000, AUTH_RW_ALL}, \
+            {0x00019000, 0x00007000, AUTH_RW_ALL}, \
+            {0x00000000, 0x00000000, AUTH_RW_ALL}, \
+            {0x00020000, 0x00160000, AUTH_RW_ALL}, \
+            {0x00180000, 0x000B0000, AUTH_RW_ALL}, \
+            {0x00230000, 0x000B0000, AUTH_RW_ALL}, \
+            {0x002E0000, 0x00010000, AUTH_RW_ALL}, \
+            {0x00000000, 0x00000000, AUTH_RW_NONE}, \
+            {0x002F0000, 0x00010000, AUTH_RW_ALL}, \
+            {0x00300000, 0x000FF000, AUTH_RW_ALL}, \
+            {0x003FF000, 0x00010000, AUTH_RW_ALL}, \
+        }, \
+    }
+#define FLASH_LAYOUT_4M_PSRAM \
+    { \
+        0x0005, \
+        0x00400000, \
+        { \
+            {0x00000000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00008000, 0x00008000, AUTH_RW_NONE}, \
+            {0x00010000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00011000, 0x00001000, AUTH_RW_ALL}, \
+            {0x00012000, 0x00007000, AUTH_RW_ALL}, \
+            {0x00019000, 0x00007000, AUTH_RW_ALL}, \
+            {0x00020000, 0x000FA000, AUTH_RW_ALL}, \
+            {0x0011A000, 0x00066000, AUTH_RW_ALL}, \
+            {0x00180000, 0x000FA000, AUTH_RW_ALL}, \
+            {0x00270000, 0x00066000, AUTH_RW_ALL}, \
+            {0x002E0000, 0x00010000, AUTH_RW_ALL}, \
+            {0x002F0000, 0x00010000, AUTH_RW_ALL}, \
+            {0x00300000, 0x000FF000, AUTH_RW_ALL}, \
+            {0x003FF000, 0x00010000, AUTH_RW_ALL}, \
+        }, \
+    }
+
+#define FUNC_29_TYPEDEF_TEST	0
+
+#if !FUNC_29_TYPEDEF_TEST
+struct part_info_t {
+    uint32_t offset;
+    uint32_t size;
+    uint32_t authority;
+};
+struct partition_table {
+    uint32_t device_id;                     /* device ID */
+    uint32_t size;                          /* total memory size */
+    struct part_info_t part[16];  			/* partition parameters */
+};
+
+const static struct partition_table g_part_table[3] = {FLASH_LAYOUT_2M, FLASH_LAYOUT_4M, FLASH_LAYOUT_4M_PSRAM};
+
+#else	//FUNC_29_TYPEDEF_TEST
+typedef struct _part_info_t {
+    uint32_t offset;
+    uint32_t size;
+    uint32_t authority;
+} part_info_t;
+typedef struct _partition_table_t {
+    uint32_t device_id;                     /* device ID */
+    uint32_t size;                          /* total memory size */
+    part_info_t part[16];  			/* partition parameters */
+} partition_table_t;
+#endif	//FUNC_29_TYPEDEF_TEST
+
+void func_29()
+{
+#if !FUNC_29_TYPEDEF_TEST
+	// struct partition_table part[2] = {FLASH_LAYOUT_2M, FLASH_LAYOUT_4M_PSRAM};
+	struct partition_table part[3] = {0};
+	struct partition_table temp = FLASH_LAYOUT_2M;
+	part[0] = temp;
+
+	printf("2m get part id:%d, size:0x%08x\n", part[0].device_id, part[0].size);
+	printf("2m sp part info: offset:0x%08x, size:0x%08x\n", part[0].part[0].offset, part[0].part[0].size);
+	printf("2m cul part info: offset:0x%08x, size:0x%08x\r\n", part[0].part[13].offset, part[0].part[13].size);
+
+	part[2] = g_part_table[2];
+	printf("4m get part id:%d, size:0x%08x\n", part[1].device_id, part[1].size);
+	printf("4m sp part info: offset:0x%08x, size:0x%08x\n", part[1].part[0].offset, part[1].part[0].size);
+	printf("4m cul part info: offset:0x%08x, size:0x%08x\r\n", part[1].part[13].offset, part[1].part[13].size);
+
+	memcpy(&part[3], &g_part_table[3], sizeof(g_part_table[3]));
+	printf("4m psram get part id:%d, size:0x%08x\n", part[2].device_id, part[2].size);
+	printf("4m psram sp part info: offset:0x%08x, size:0x%08x\n", part[2].part[0].offset, part[2].part[0].size);
+	printf("4m psram cul part info: offset:0x%08x, size:0x%08x\r\n", part[2].part[13].offset, part[2].part[13].size);
+#else	//FUNC_29_TYPEDEF_TEST
+	partition_table_t test_table = {0};
+	printf("get part id:%d, size:0x%08x\n", test_table.device_id, test_table.size);
+	printf("sp part info: offset:0x%08x, size:0x%08x\n", test_table.part[0].offset, test_table.part[0].size);
+	printf("cul part info: offset:0x%08x, size:0x%08x\r\n", test_table.part[13].offset, test_table.part[13].size);
+	partition_table_t temp_table = FLASH_LAYOUT_2M;
+	test_table = temp_table;
+	printf("get part id:%d, size:0x%08x\n", test_table.device_id, test_table.size);
+	printf("sp part info: offset:0x%08x, size:0x%08x\n", test_table.part[0].offset, test_table.part[0].size);
+	printf("cul part info: offset:0x%08x, size:0x%08x\r\n", test_table.part[13].offset, test_table.part[13].size);
+	// test_table = FLASH_LAYOUT_4M_PSRAM;
+	// printf("get part id:%d, size:0x%08x\n", test_table.device_id, test_table.size);
+	// printf("sp part info: offset:0x%08x, size:0x%08x\n", test_table.part[0].offset, test_table.part[0].size);
+	// printf("cul part info: offset:0x%08x, size:0x%08x\r\n", test_table.part[13].offset, test_table.part[13].size);
+
+#endif	//FUNC_29_TYPEDEF_TEST
+}
+
+//测试C语言预处理指令 #error
+//结论：枚举变量不参与预编译流程
+typedef enum {
+	PART_NUM_MAX_E = 0,
+} func_30_part_1m_t;
+
+typedef enum {
+	PART_NUM_2M_MAX_E = 1,
+} func_30_part_2m_t;
+
+typedef enum {
+	PART_NUM_4M_MAX_E = 1,
+} func_30_part_4m_t;
+
+#define PART_NUM_MAX	PART_NUM_MAX_E
+#define PART_NUM_2M_MAX	PART_NUM_2M_MAX_E
+#define PART_NUM_4M_MAX	PART_NUM_4M_MAX_E
+
+#define BUILD_BUG_ON(condition) ((void)sizeof(char[1 - (2 * (!(condition)))]))
+
+void func_30()
+{
+	// func_30_part_1m_t test1;
+	// func_30_part_2m_t test2;
+	// func_30_part_4m_t test4;
+#if PART_NUM_MAX_E
+#warning "PART_NUM_MAX_E is 1"
+#else
+#warning "PART_NUM_MAX_E is 0"
+#endif
+
+#if PART_NUM_2M_MAX_E
+#warning "PART_NUM_2M_MAX_E is 1"
+#else
+#warning "PART_NUM_2M_MAX_E is 0"
+#endif
+
+#if PART_NUM_4M_MAX_E
+#warning "PART_NUM_4M_MAX_E is 1"
+#else
+#warning "PART_NUM_4M_MAX_E is 0"
+#endif
+
+#if PART_NUM_MAX
+#warning "PART_NUM_MAX is 1"
+#else
+#warning "PART_NUM_MAX is 0"
+#endif
+
+#if PART_NUM_2M_MAX
+#warning "PART_NUM_2M_MAX is 1"
+#else
+#warning "PART_NUM_2M_MAX is 0"
+#endif
+
+#if PART_NUM_4M_MAX
+#warning "PART_NUM_4M_MAX is 1"
+#else
+#warning "PART_NUM_4M_MAX is 0"
+#endif
+
+	BUILD_BUG_ON((PART_NUM_2M_MAX >= PART_NUM_4M_MAX) && (PART_NUM_2M_MAX > PART_NUM_MAX));
+// #if ((PART_NUM_2M_MAX == PART_NUM_4M_MAX) && (PART_NUM_2M_MAX > PART_NUM_MAX))
+// #if ((PART_NUM_2M_MAX_E == PART_NUM_4M_MAX_E) && (PART_NUM_2M_MAX_E > PART_NUM_MAX_E))
+// #if ((1 == 1) && (1 > 0))
+// #error "logic is 1"
+// #else
+// #error "logic is 0"
+// #endif
+
+// 	if ((PART_NUM_2M_MAX == PART_NUM_4M_MAX) && (PART_NUM_2M_MAX > PART_NUM_MAX)) {
+// 		#error "logic is 1"
+// 	} else {
+// 		#error "logic is 0"
+// 	}
+
+	printf("%s end\n", __FUNCTION__);
+}
+
+//不能使用##？
+// void func_31()
+// {
+// #define func_31_1m_psram		0x11
+// #define func_31_2m				0x22
+// #define func_31_2m_psram		0x33
+// #define func_31_4m				0x44
+// #define func_31_4m_psram		0x55
+
+// 	uint8_t flash_size = 1;
+// 	uint8_t psram_size = 2;
+// 	uint8_t test = 0;
+// 	if (psram_size) {
+// 		test = func_31_##flash_size##m_psram;
+// 	} else {
+// 		test = func_31_##flash_size##m;
+// 	}
+// 	printf("%s, test:%d\n", __FUNCTION__, test);
+// }
+
+void func_32()
+{
+	char test[10] = "111111111";
+	uint8_t num = 0;
+
+	printf("%s \n", test);
+
+	for (uint8_t i = 0; i < 10; i++) {
+		test[i] = 48 + i;
+	}
+
+	printf("%s \n", test);
+
+	return;
+}
+
 int main()
 {
-	func_23();
+	func_29();
 	getchar();
 	return 0;
 }

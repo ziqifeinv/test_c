@@ -20,3 +20,4 @@
 *.db-wal
 *.enc
 *.txt
+00_test/main.exe.stackdump

@@ -832,9 +832,25 @@ void func_32()
 	return;
 }
 
+void func_33(void)
+{
+    uint8_t func_33_test[5] = {1, 2, 3, 4, 5};
+    uint8_t i = 0;
+    uint8_t *ptr = func_33_test;
+
+    for(i = 0; i < 5; i++) {
+        printf("i: %d, old value:%d, ", i, func_33_test[i]);
+        *ptr ^= 0x55;
+        ptr++;
+        printf("new value:%d \n", func_33_test[i]);
+    }
+
+    return;
+}
+
 int main()
 {
-	func_29();
+	func_33();
 	getchar();
 	return 0;
 }

@@ -903,9 +903,65 @@ int func_35()
     return 0;
 }
 
+int func_36()
+{
+    #define FUNC_36_TEST_CHAR "test"
+
+    printf("this is %s\n", FUNC_36_TEST_CHAR);
+
+    return 0;
+}
+
+typedef struct
+{
+	uint8_t	*pBuffer;
+	uint32_t	MaxLength;
+	uint32_t	BufferLen;
+}func_37_struct;
+
+int func_37()
+{
+    uint8_t *ptr = NULL;
+    uint8_t *ptr_2 = NULL;
+    uint8_t temp[5] = {0};
+    func_37_struct *buffer[128] = {0};
+    func_37_struct temp_struct = {0};
+
+    temp_struct.pBuffer = temp;
+    buffer[127] = &temp_struct;
+
+    ptr = buffer[127][0].pBuffer;
+    ptr_2 = buffer[127]->pBuffer;
+
+    if (ptr != NULL) {
+        printf("ptr:%p\n", ptr_2);
+    }
+    if (ptr_2 != NULL) {
+        printf("ptr_2:%p\n", ptr_2);
+    }
+
+    return 0;
+}
+
+int func_38()
+{
+#define FUNC_38_1   100
+    int32_t a = -300;
+    for (uint8_t i = 0; i < 5; i++) {
+        if (a <= (int32_t)FUNC_38_1) {
+            printf("enter logic 11111\n");
+        } else {
+            printf("enter logic 22222\n");
+        }
+    }
+    return 1;
+}
+
+char main_test[] = "start main";
 int main()
 {
-	func_35();
+    printf("%s\n", main_test);
+	func_38();
 	getchar();
 	return 0;
 }
